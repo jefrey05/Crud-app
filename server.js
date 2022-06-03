@@ -8,7 +8,7 @@ const connectionString =
   "mongodb+srv://jefrey:WesY9WgZTALaXuIY@cluster0.wbxv0.mongodb.net/?retryWrites=true&w=majority";
 
 MongoClient.connect(connectionString, (err, client) => {
-  if (err) return console.err(err);
+  if (err) return console.log(err);
   console.log("Connected to Database");
   const db = client.db("star-wars-quotes");
   const quotesCollection = db.collection("quotes");
