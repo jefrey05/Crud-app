@@ -26,7 +26,7 @@ MongoClient.connect(connectionString, (err, client) => {
         //console.log(results)
         res.render("index.ejs", { quotes: results });
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
   });
 
   app.post("/quotes", (req, res) => {
@@ -71,7 +71,7 @@ MongoClient.connect(connectionString, (err, client) => {
         }
         res.json("Delete Darth Vader's quote");
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
   });
   app.listen(process.env.PORT || PORT,()=>{
     console.log(`The server is running on ${PORT}!`)
