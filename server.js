@@ -58,7 +58,7 @@ MongoClient.connect(connectionString, (err, client) => {
         //console.log(result)
         res.json("success");
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
   });
 
   app.delete("/quotes", (req, res) => {
