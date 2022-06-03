@@ -2,6 +2,7 @@ console.log("may node with you");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const PORT = 8000;
 const MongoClient = require("mongodb").MongoClient;
 const connectionString =
   "mongodb+srv://jefrey:WesY9WgZTALaXuIY@cluster0.wbxv0.mongodb.net/?retryWrites=true&w=majority";
@@ -72,7 +73,7 @@ MongoClient.connect(connectionString, (err, client) => {
       })
       .catch((error) => console.error(error));
   });
-  app.listen(3000, () => {
-    console.log("listening on 3000");
-  });
+  app.listen(process.env.PORT || PORT,()=>{
+    console.log(`The server is running on ${PORT}!`)
+})
 });
