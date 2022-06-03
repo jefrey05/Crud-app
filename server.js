@@ -37,7 +37,7 @@ MongoClient.connect(connectionString, (err, client) => {
         //console.log(result)
         res.redirect("/");
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
   });
 
   app.put("/quotes", (req, res) => {
